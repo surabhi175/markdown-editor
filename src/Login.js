@@ -29,7 +29,7 @@ class Login extends Component{
                     value={this.state.password}
                     />
                     <Button onClick={this.login}>Login</Button>
-                    <Button onClick={this.signuo}>Signup</Button>
+                    <Button onClick={this.signup}>Signup</Button>
                 </form>
             </div>
         )

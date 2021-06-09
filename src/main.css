@@ -1,14 +1,10 @@
 
-body{
-  background-color:rgb(207, 245, 238);
-}
 .Wrapper{
-  height: 100vh;
-  /* background-color:rgb(218, 249, 255); */
+  padding-bottom: 27px;
+  background-color:rgb(207, 245, 238);
+  height:max-content;
   align-items: stretch;
   justify-content:stretch;
-  /* width: 1480px;
-  height:710px; */
 }
 
 .Container{
@@ -24,10 +20,19 @@ body{
 .header{
   display: grid;
   grid-template-columns: 6fr 3fr 3fr;
-  flex-wrap:inherit;
+  flex-wrap:wrap;
+  overflow-wrap: normal;
   text-align: center;
   height: fit-content;
   position: relative;
+}
+
+@media screen and (max-width: 400px) { 
+  .header{
+    padding-left: 25px;
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
 
 .header button{
@@ -40,6 +45,8 @@ body{
   margin:0px;
   border: 0px;
   text-decoration: none;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .dropdown{
@@ -47,8 +54,16 @@ body{
   position:absolute;
   top: 100%;
   left: 50%;
-  width: 200px;
+  width: 180px;
   box-shadow: 2px 2px 4px gray;
+}
+
+@media screen and (max-width: 500px){
+  .dropdown{
+    position: absolute;
+    top: 100%;
+    left: 3%;
+  }
 }
 
 ul{

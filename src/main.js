@@ -5,6 +5,7 @@ import marked from "marked";
 import Button from '@material-ui/core/Button';
 import BrushOutlined from '@material-ui/icons/BrushOutlined';
 import AccountCircleOutlined from '@material-ui/icons/AccountCircleOutlined';
+import fire from "./config/fire";
 
 
 class Main extends Component {
@@ -88,6 +89,10 @@ class Main extends Component {
     }
   }
 
+  logout(){
+    fire.auth().signOut();
+  }
+
   render(){
     return (
       <div className="Wrapper" style={{backgroundColor: this.state.bgColor}}>
@@ -108,14 +113,14 @@ class Main extends Component {
               <li onClick={this.bgColorGray}>Pearl Gray</li>
             </ul>
           </div>) : null}
-          <Button startIcon={<AccountCircleOutlined />}
+          <Button onClick={this.logout} startIcon={<AccountCircleOutlined />}
           style={{textAlign: "top", height: "fit-content", alignSelf:"center"}}
           >
-            Logput
+            Logout
           </Button>
           </div>
         <div className="Container">
-          <div className="Container1">
+          <div className="Container1" style={{backgroundColor: "white"}}>
             <header style={{padding: "5px", fontSize:"1.4em", textShadow:"1px 1px 2px darkgrey", textAlign:"center", fontFamily: "serif"}}><i>Editor</i></header>
             <textarea 
             style={{border:"1px double grey"}} 
